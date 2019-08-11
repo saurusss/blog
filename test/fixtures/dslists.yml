@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Index_no: 1
+  g_no: MyString
+  g_year: MyString
+  name: MyString
+  company: MyString
+  company_part: MyString
+  company_title: MyString
+  company_address: MyString
+  company_tel: MyString
+  home_address: MyString
+  home_tel: MyString
+  mobile: MyString
+  confirm: MyString
+
+two:
+  Index_no: 1
+  g_no: MyString
+  g_year: MyString
+  name: MyString
+  company: MyString
+  company_part: MyString
+  company_title: MyString
+  company_address: MyString
+  company_tel: MyString
+  home_address: MyString
+  home_tel: MyString
+  mobile: MyString
+  confirm: MyString

@@ -1,0 +1,2 @@
+class Dslist < ApplicationRecord
+end

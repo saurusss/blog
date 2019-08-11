@@ -1,0 +1,82 @@
+<%= form_with(model: dslist, local: true) do |form| %>
+  <% if dslist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dslist.errors.count, "error") %> prohibited this dslist from being saved:</h2>
+
+      <ul>
+      <% dslist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Index_no %>
+    <%= form.number_field :Index_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :g_no %>
+    <%= form.text_field :g_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :g_year %>
+    <%= form.text_field :g_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company %>
+    <%= form.text_field :company %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_part %>
+    <%= form.text_field :company_part %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_title %>
+    <%= form.text_field :company_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_address %>
+    <%= form.text_field :company_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :company_tel %>
+    <%= form.text_field :company_tel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :home_address %>
+    <%= form.text_field :home_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :home_tel %>
+    <%= form.text_field :home_tel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mobile %>
+    <%= form.text_field :mobile %>
+  </div>
+
+  <div class="field">
+    <%= form.label :confirm %>
+    <%= form.text_field :confirm %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
