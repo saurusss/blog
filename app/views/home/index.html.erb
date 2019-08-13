@@ -1,7 +1,23 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container">
 
-<%= link_to "My Blog", posts_path %>
-<%= link_to "Contacts", contacts_path %>
-<%= link_to "DSlist", dslists_path %>
-<a href="/users/sign_in">로그인</a>
+    <h1>Home#index</h1>
+    <p>Find me in app/views/home/index.html.erb</p>
+    <% if user_signed_in? %>
+        <p><%= current_user.email %>님 환영합니다.</p>
+        <%= link_to "My Blog", posts_path %> | 
+        <%= link_to "Contacts", contacts_path %> | 
+        <%= link_to "DSlist", dslists_path %> | 
+        <a href="/users/sign_out" class='btn btn-default'>로그아웃</a>
+
+    <% else %>
+        <p>아직 로그인을 하지 않으셨네요. 로그인을 해주세요.<p>
+        <a href="/users/sign_in" class='btn btn-default'>로그인</a>
+
+    <% end %>
+
+</div>
+
+<!--%= link_to "My Blog", posts_path %> | 
+<%= link_to "Contacts", contacts_path %> | 
+<%= link_to "DSlist", dslists_path %> | 
+<a href="/users/sign_in">로그인</a-->
