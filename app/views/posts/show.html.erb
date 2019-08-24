@@ -17,6 +17,7 @@
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 <hr>
 <p><strong>댓글작성</strong></p>
@@ -38,5 +39,36 @@
  <div class="well">
   <p>작성자 : <%= c.user.email %></p>
   <p>내용 : <%= c.comment %></p>
+
+      <div class="edit-comment-<%=c.id%>" style="display:none;">
+        <form action="/posts/<%=@post.id%>/comments/<%=c.id%>" method="post">
+          <div class="form-group">
+            <input type="hidden" value="<%=current_user.id%>" name="user_id"></input>
+            <input type="hidden" value="<%=@post.id%>" name="post_id"></input>
+            <textarea class="form-control" rows="5" name="comment"><%=c.comment %></textarea>
+          </div>
+          <button type="submit" class="btn btn-default">수정완료!</button>
+        </form>
+        </br>
+      </div>
+      <div class="edit-comment-<%=c.id%>-button-group">
+        <button class="btn btn-default edit-button" id="edit-comment-<%=c.id %>">수정</button>
+        <a href="/posts/<%=@post.id%>/comments/<%=c.id%>" data-method="delete" class="btn btn-default">삭제</a>
+      </div>
+
  </div>
 <% end %>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+
+<script>
+  $(".edit-button").click(function() {
+    var clickedID = this.id;
+    $("."+clickedID).css("display","block");
+    $("."+clickedID+"-button-group").css("display","none");
+  });
+  
+</script>
+
+
