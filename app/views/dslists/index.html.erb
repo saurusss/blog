@@ -48,7 +48,7 @@
       <tr>
         <td><%= firstT =@dslists.first.id %> </td>
         <td><%= lastT = @dslists.last.id %> </td>
-        <td><%= link_to '<<Previous', dslists_path%></td>
+        <td><%= link_to '<< Previous', dslists_path%></td>
         <td><%= form_tag( dslists_path,  method: "get") do %>
           <input type="text" name="firstT" value=<%=firstT%> />
           <input type="submit" value='<< Previous ' />
