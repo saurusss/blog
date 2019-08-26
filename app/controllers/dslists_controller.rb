@@ -3,9 +3,18 @@ class DslistsController < ApplicationController
 
   # GET /dslists
   # GET /dslists.json
+
   def index
-    @dslists = Dslist.all
+
+    if params[:lastT].present? 
+      @dslists = Dslist.find_each(:start =>params[:lastT]  ).take(5)
+    else
+      @dslists = Dslist.find_each(:start => params[:firstid] ).take(5)
+      # @dslists = Dslist.all.take(5)
+    end
+
   end
+
 
   # GET /dslists/1
   # GET /dslists/1.json

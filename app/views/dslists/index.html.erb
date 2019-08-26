@@ -2,6 +2,7 @@
 
 <h1>Dslists</h1>
 <%= @dslists.length  %>
+<%= @dslists.last.id %>
 <table>
   <thead>
     <tr>
@@ -42,7 +43,24 @@
         <td><%= link_to 'Edit', edit_dslist_path(dslist) %></td>
         <td><%= link_to 'Destroy', dslist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+
     <% end %>
+      <tr>
+        <td><%= firstT =@dslists.first.id %> </td>
+        <td><%= lastT = @dslists.last.id %> </td>
+        <td><%= link_to '<<Previous', dslists_path%></td>
+        <td><%= form_tag( dslists_path,  method: "get") do %>
+          <input type="text" name="firstT" value=<%=firstT%> />
+          <input type="submit" value='<< Previous ' />
+        <% end %>
+        </td>
+        <td><%= form_tag( dslists_path,  method: "get") do %>
+          <input type="text" name="lastT" value=<%=lastT%> />
+          <input type="submit" value='Next >>' />
+        <% end %>
+        </td>
+      </tr>
+
   </tbody>
 </table>
 
