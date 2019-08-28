@@ -23,8 +23,6 @@
   </thead>
 
   <tbody>
-
-
     <% @dslists.each do |dslist| %>
 
       <tr>
@@ -48,7 +46,19 @@
 
     <% end %>
       <tr>
-          <td><%= will_paginate @dslists %></td>
+        <td><%= firstT =@dslists.first.id %> </td>
+        <td><%= lastT = @dslists.last.id %> </td>
+        <td><%= link_to '<< Previous', dslists_path%></td>
+        <td><%= form_tag( dslists_path,  method: "get") do %>
+          <input type="text" name="firstT" value=<%=firstT%> />
+          <input type="submit" value='<< Previous ' />
+        <% end %>
+        </td>
+        <td><%= form_tag( dslists_path,  method: "get") do %>
+          <input type="text" name="lastT" value=<%=lastT%> />
+          <input type="submit" value='Next >>' />
+        <% end %>
+        </td>
       </tr>
 
   </tbody>

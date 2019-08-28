@@ -6,12 +6,13 @@ class DslistsController < ApplicationController
 
   def index
 
-    if params[:lastT].present? 
-      @dslists = Dslist.find_each(:start =>params[:lastT]  ).take(5)
-    else
-      @dslists = Dslist.find_each(:start => params[:firstid] ).take(5)
-      # @dslists = Dslist.all.take(5)
-    end
+    @dslists = Dslist.paginate(page: params[:page], per_page: 5)
+    # if params[:lastT].present? 
+    #   @dslists = Dslist.find_each(:start =>params[:lastT]  ).take(5)
+    # else
+    #   @dslists = Dslist.find_each(:start => params[:firstid] ).take(5)
+    #   # @dslists = Dslist.all.take(5)
+    # end
 
   end
 
