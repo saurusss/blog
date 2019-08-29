@@ -47,12 +47,11 @@
       </tr>
 
     <% end %>
-      <tr>
-          <td><%= will_paginate @dslists %></td>
-      </tr>
 
   </tbody>
 </table>
+
+<%= will_paginate @dslists, renderer: BootstrapPagination::Rails,  previous_label: "Older", netxt_label: "Newer", inner_window: 1, outer_windows: 0 %>
 
 <br>
 
