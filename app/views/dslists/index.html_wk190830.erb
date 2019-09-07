@@ -23,6 +23,11 @@
   </thead>
 
   <tbody>
+
+
+
+
+
     <% @dslists.each do |dslist| %>
       <tr>
         <td><%= dslist.Index_no %></td>
@@ -42,9 +47,13 @@
         <td><%= link_to 'Edit', edit_dslist_path(dslist) %></td>
         <td><%= link_to 'Destroy', dslist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+
     <% end %>
+
   </tbody>
 </table>
+
+<%= will_paginate @dslists, renderer: BootstrapPagination::Rails,  previous_label: "Older", netxt_label: "Newer", inner_window: 1, outer_windows: 0 %>
 
 <br>
 
