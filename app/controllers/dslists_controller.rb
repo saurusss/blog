@@ -6,7 +6,7 @@ class DslistsController < ApplicationController
 
   def index
 
-    @dslists = Dslist.all.paginate(page: params[:page], per_page: 15)
+    @dslists = Dslist.all.paginate(page: params[:page], per_page: 10)
     # if params[:lastT].present? 
     #   @dslists = Dslist.find_each(:start =>params[:lastT]  ).take(5)
     # else
