@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Assetlists</h1>
-
+<%= @assetlists.length %>
 <table>
   <thead>
     <tr>
@@ -61,6 +61,7 @@
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @assetlists, renderer: BootstrapPagination::Rails,  previous_label: "Previous", next_label: "Newer", inner_window: 1, outer_windows: 0 %>
 
 <br>
 
