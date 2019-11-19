@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :assetlists
   get 'searches/result'
   devise_for :users
   resources :dslists

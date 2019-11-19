@@ -10,7 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_13_155022) do
+ActiveRecord::Schema.define(version: 2019_11_19_055457) do
+
+  create_table "assetlists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "mgmtno"
+    t.string "dept"
+    t.string "username"
+    t.string "devicetype"
+    t.string "purpose"
+    t.string "manufacture"
+    t.string "modelno"
+    t.string "serialno"
+    t.string "description"
+    t.string "ram"
+    t.string "disk"
+    t.string "os"
+    t.string "hostname"
+    t.string "ipaddr"
+    t.string "gateway"
+    t.string "mac_wire"
+    t.string "mac_wireless"
+    t.date "date_buy"
+    t.date "date_produce"
+    t.integer "amt_buy"
+    t.string "remarks"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment"
@@ -29,6 +55,23 @@ ActiveRecord::Schema.define(version: 2019_08_13_155022) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ds_tbl", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "id"
+    t.integer "Index_No"
+    t.text "No"
+    t.text "Gradu"
+    t.text "Name"
+    t.text "Company"
+    t.text "Company_Part"
+    t.text "Company_Level"
+    t.text "Company_Address"
+    t.text "Company_Tel"
+    t.text "Home_Address"
+    t.text "Home_Tel"
+    t.text "Home_Mobile"
+    t.text "Confirm"
+  end
+
   create_table "dslists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "Index_no"
     t.string "g_no"
@@ -45,6 +88,23 @@ ActiveRecord::Schema.define(version: 2019_08_13_155022) do
     t.string "confirm"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "dstbl_s", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "id"
+    t.integer "Index_No"
+    t.text "No"
+    t.text "Gradu"
+    t.text "Name"
+    t.text "Company"
+    t.text "Company_Part"
+    t.text "Company_Level"
+    t.text "Company_Address"
+    t.text "Company_Tel"
+    t.text "Home_Address"
+    t.text "Home_Tel"
+    t.text "Home_Mobile"
+    t.text "Confirm"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

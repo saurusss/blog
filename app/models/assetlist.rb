@@ -1,0 +1,2 @@
+class Assetlist < ApplicationRecord
+end
