@@ -1,4 +1,5 @@
 class DslistsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_dslist, only: [:show, :edit, :update, :destroy]
 
   # GET /dslists

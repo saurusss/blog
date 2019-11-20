@@ -1,4 +1,5 @@
 class AssetlistsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_assetlist, only: [:show, :edit, :update, :destroy]
 
   # GET /assetlists
