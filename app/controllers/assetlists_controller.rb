@@ -4,7 +4,12 @@ class AssetlistsController < ApplicationController
   # GET /assetlists
   # GET /assetlists.json
   def index
-    @assetlists = Assetlist.all
+    s_store="2"
+    if s_store == "all"
+        @assetlists = Assetlist.all
+    else
+        @assetlists = Assetlist.where("store_id = ?", s_store)
+    end
     @store = Store.all
   end
 
