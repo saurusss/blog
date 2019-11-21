@@ -27,4 +27,4 @@
 /config/master.key
 
 # Ingore Database parameters
-/config/database.yml
+./config/database.yml
