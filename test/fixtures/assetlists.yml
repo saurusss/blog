@@ -2,7 +2,7 @@
 
 one:
   mgmtno: MyString
-  dept: MyString
+  store: one
   username: MyString
   devicetype: MyString
   purpose: MyString
@@ -18,14 +18,14 @@ one:
   gateway: MyString
   mac_wire: MyString
   mac_wireless: MyString
-  date_buy: 2019-11-19
-  date_produce: 2019-11-19
+  date_buy: 2019-11-21
+  date_produce: 2019-11-21
   amt_buy: 1
-  remarks: MyString
+  remarks: MyText
 
 two:
   mgmtno: MyString
-  dept: MyString
+  store: two
   username: MyString
   devicetype: MyString
   purpose: MyString
@@ -41,7 +41,7 @@ two:
   gateway: MyString
   mac_wire: MyString
   mac_wireless: MyString
-  date_buy: 2019-11-19
-  date_produce: 2019-11-19
+  date_buy: 2019-11-21
+  date_produce: 2019-11-21
   amt_buy: 1
-  remarks: MyString
+  remarks: MyText

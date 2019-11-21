@@ -2,7 +2,7 @@ class CreateAssetlists < ActiveRecord::Migration[5.2]
   def change
     create_table :assetlists do |t|
       t.string :mgmtno
-      t.string :dept
+      t.references :store, foreign_key: true
       t.string :username
       t.string :devicetype
       t.string :purpose
@@ -21,7 +21,7 @@ class CreateAssetlists < ActiveRecord::Migration[5.2]
       t.date :date_buy
       t.date :date_produce
       t.integer :amt_buy
-      t.string :remarks
+      t.text :remarks
 
       t.timestamps
     end

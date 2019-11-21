@@ -1,163 +1,109 @@
 <p id="notice"><%= notice %></p>
 
-<table class="table">
-    <tr>
-        <td>
-            <strong>Mgmtno</strong>
-        </td>
-        <td>
-            <%= @assetlist.mgmtno %>
-        </td>
-    </tr>
+<p>
+  <strong>Mgmtno:</strong>
+  <%= @assetlist.mgmtno %>
+</p>
 
-    <tr>
-        <td>
-            <strong>Dept</strong>
-        </td>
-        <td>
-            <%= @assetlist.dept %>
-        </td>
-    </tr>
+<p>
+  <strong>Store:</strong>
+  <%= @assetlist.store %>
+</p>
 
-    <tr>
-        <td>
-            <strong>Username</strong>
-        </td>
-        <td>
-            <%= @assetlist.username %>
-        </td>
-    </tr>
+<p>
+  <strong>Username:</strong>
+  <%= @assetlist.username %>
+</p>
 
-    <tr>
-        <td>
-            <strong>Devicetype</strong>
+<p>
+  <strong>Devicetype:</strong>
+  <%= @assetlist.devicetype %>
+</p>
 
-        </td>
-        <td>
-            <%= @assetlist.devicetype %>
+<p>
+  <strong>Purpose:</strong>
+  <%= @assetlist.purpose %>
+</p>
 
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>Purpose</strong>
+<p>
+  <strong>Manufacture:</strong>
+  <%= @assetlist.manufacture %>
+</p>
 
-        </td>
-        <td>
-            <%= @assetlist.purpose %>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>Manufacture</strong>
-        </td>
-        <td>
-            <%= @assetlist.manufacture %>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>Modelno</strong>
-        </td>
-        <td><%= @assetlist.modelno %></td>
-    </tr>
-    <tr>
-        <td>
-            <strong>Serialno</strong>
-        </td>
-        <td><%= @assetlist.serialno %></td>
-    </tr>
-    <tr>
-        <td>
-            <strong>Description</strong>
-        </td>
-        <td><%= @assetlist.description %></td>
-    </tr>
-    <tr>
-        <td>
-            <strong>Ram</strong>
-        </td>
-        <td><%= @assetlist.ram %></td>
-    </tr>
-    <tr>
-        <td>
-            <strong>Disk</strong>
-        </td>
-        <td><%= @assetlist.disk %></td>
-    </tr>
-    <tr>
-        <td>
-            <strong>Os</strong>
-        </td>
-        <td>
-            <%= @assetlist.os %></td>
-    </tr>
-    <tr>
-        <td>
-            <strong>Hostname</strong>
-        </td>
-        <td>
-            <%= @assetlist.hostname %></td>
-    </tr>
-    <tr>
-        <td>
-            <strong>Ipaddr</strong>
-        </td>
-        <td>
-            <%= @assetlist.ipaddr %></td>
-    </tr>
-    <tr>
-        <td>
-            <strong>Gateway</strong>
-        </td>
-        <td>
-            <%= @assetlist.gateway %></td>
-    </tr>
-    <tr>
-        <td>
-            <strong>Mac wire</strong>
-        </td>
-        <td><%= @assetlist.mac_wire %></td>
-    </tr>
+<p>
+  <strong>Modelno:</strong>
+  <%= @assetlist.modelno %>
+</p>
 
-    <tr>
-        <td>
-            <strong>Mac wireless</strong>
-        </td>
-        <td><%= @assetlist.mac_wireless %></td>
-    </tr>
+<p>
+  <strong>Serialno:</strong>
+  <%= @assetlist.serialno %>
+</p>
 
-    <tr>
-        <td>
-            <strong>Date buy</strong>
-        </td>
-        <td><%= @assetlist.date_buy %>
-        </td>
-    </tr>
+<p>
+  <strong>Description:</strong>
+  <%= @assetlist.description %>
+</p>
 
-    <tr>
-        <td>
-            <strong>Date produce</strong>
-        </td>
-        <td><%= @assetlist.date_produce %>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>Amount buy</strong>
-        </td>
-        <td><%= @assetlist.amt_buy %>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <strong>Remarks</strong>
-        </td>
-        <td><%= @assetlist.remarks %>
-        </td>
-    </tr>
+<p>
+  <strong>Ram:</strong>
+  <%= @assetlist.ram %>
+</p>
 
-</table>
-<%= link_to 'Edit', edit_assetlist_path(@assetlist) %>
-|
+<p>
+  <strong>Disk:</strong>
+  <%= @assetlist.disk %>
+</p>
+
+<p>
+  <strong>Os:</strong>
+  <%= @assetlist.os %>
+</p>
+
+<p>
+  <strong>Hostname:</strong>
+  <%= @assetlist.hostname %>
+</p>
+
+<p>
+  <strong>Ipaddr:</strong>
+  <%= @assetlist.ipaddr %>
+</p>
+
+<p>
+  <strong>Gateway:</strong>
+  <%= @assetlist.gateway %>
+</p>
+
+<p>
+  <strong>Mac wire:</strong>
+  <%= @assetlist.mac_wire %>
+</p>
+
+<p>
+  <strong>Mac wireless:</strong>
+  <%= @assetlist.mac_wireless %>
+</p>
+
+<p>
+  <strong>Date buy:</strong>
+  <%= @assetlist.date_buy %>
+</p>
+
+<p>
+  <strong>Date produce:</strong>
+  <%= @assetlist.date_produce %>
+</p>
+
+<p>
+  <strong>Amt buy:</strong>
+  <%= @assetlist.amt_buy %>
+</p>
+
+<p>
+  <strong>Remarks:</strong>
+  <%= @assetlist.remarks %>
+</p>
+
+<%= link_to 'Edit', edit_assetlist_path(@assetlist) %> |
 <%= link_to 'Back', assetlists_path %>

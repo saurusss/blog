@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  group: MyString
+  storecode: MyString
+  store_ab: MyString
+  storename: MyString
+  extension: MyString
+  address: MyText
+  telno: MyString
+
+two:
+  group: MyString
+  storecode: MyString
+  store_ab: MyString
+  storename: MyString
+  extension: MyString
+  address: MyText
+  telno: MyString

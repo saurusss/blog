@@ -1,12 +1,11 @@
 class AssetlistsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_assetlist, only: [:show, :edit, :update, :destroy]
 
   # GET /assetlists
   # GET /assetlists.json
   def index
-    #@assetlists = Assetlist.all
-    @assetlists = Assetlist.all.paginate(page: params[:page], per_page: 10)
+    @assetlists = Assetlist.all
+    @store = Store.all
   end
 
   # GET /assetlists/1
@@ -71,6 +70,6 @@ class AssetlistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def assetlist_params
-      params.require(:assetlist).permit(:mgmtno, :dept, :username, :devicetype, :purpose, :manufacture, :modelno, :serialno, :description, :ram, :disk, :os, :hostname, :ipaddr, :gateway, :mac_wire, :mac_wireless, :date_buy, :date_produce, :amt_buy, :remarks)
+      params.require(:assetlist).permit(:mgmtno, :store_id, :username, :devicetype, :purpose, :manufacture, :modelno, :serialno, :description, :ram, :disk, :os, :hostname, :ipaddr, :gateway, :mac_wire, :mac_wireless, :date_buy, :date_produce, :amt_buy, :remarks)
     end
 end

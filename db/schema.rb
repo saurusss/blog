@@ -10,11 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_19_055457) do
+ActiveRecord::Schema.define(version: 2019_11_21_061754) do
+
+  create_table "aaa", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "id"
+    t.text "mgmtno"
+    t.text "storename"
+    t.text "username"
+    t.text "devicetype"
+    t.text "purpose"
+    t.text "manufacture"
+    t.text "modelno"
+    t.text "serialno"
+    t.text "description"
+    t.text "ram"
+    t.text "disk"
+    t.text "os"
+    t.text "hostname"
+    t.text "ipaddr"
+    t.text "gateway"
+    t.text "mac_wire"
+    t.text "mac_wireless"
+    t.datetime "date_buy"
+    t.datetime "date_produce"
+    t.text "amt_buy"
+    t.text "remarks"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "assetlists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "mgmtno"
-    t.string "dept"
+    t.bigint "store_id"
     t.string "username"
     t.string "devicetype"
     t.string "purpose"
@@ -33,9 +60,10 @@ ActiveRecord::Schema.define(version: 2019_11_19_055457) do
     t.date "date_buy"
     t.date "date_produce"
     t.integer "amt_buy"
-    t.string "remarks"
+    t.text "remarks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["store_id"], name: "index_assetlists_on_store_id"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -117,6 +145,29 @@ ActiveRecord::Schema.define(version: 2019_11_19_055457) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "storelist_191121", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "id"
+    t.text "group"
+    t.text "storecode"
+    t.text "store_ab"
+    t.text "storename"
+    t.text "extension"
+    t.text "address"
+    t.text "telno"
+  end
+
+  create_table "stores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "group"
+    t.string "storecode"
+    t.string "store_ab"
+    t.string "storename"
+    t.string "extension"
+    t.text "address"
+    t.string "telno"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -129,6 +180,7 @@ ActiveRecord::Schema.define(version: 2019_11_19_055457) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "assetlists", "stores"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "posts", "users"

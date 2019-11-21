@@ -1,72 +1,67 @@
+<p id="notice"><%= notice %></p>
 
-  <p id="notice"><%= notice %></p>
+<h1>Assetlists</h1>
 
-  <h1>Assetlists</h1>
-  <%= @assetlists.length %>
-  
-  <table class="table table-striped">
-    <thead>
+<table>
+  <thead>
+    <tr>
+      <th>Mgmtno</th>
+      <th>Storename</th>
+      <th>Username</th>
+      <th>Devicetype</th>
+      <th>Purpose</th>
+      <th>Manufacture</th>
+      <th>Modelno</th>
+      <th>Serialno</th>
+      <th>Description</th>
+      <th>Ram</th>
+      <th>Disk</th>
+      <th>Os</th>
+      <th>Hostname</th>
+      <th>Ipaddr</th>
+      <th>Gateway</th>
+      <th>Mac wire</th>
+      <th>Mac wireless</th>
+      <th>Date buy</th>
+      <th>Date produce</th>
+      <th>Amt buy</th>
+      <th>Remarks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assetlists.each do |assetlist| %>
       <tr>
-        <th>Mgmtno</th>
-        <th>Dept</th>
-        <th>Username</th>
-        <th>Devicetype</th>
-        <th>Purpose</th>
-        <th>Manufacture</th>
-        <th>Modelno</th>
-        <th>Serialno</th>
-        <th>Description</th>
-        <th>Ram</th>
-        <th>Disk</th>
-        <th>Os</th>
-        <th>Hostname</th>
-        <th>Ipaddr</th>
-        <th>Gateway</th>
-        <th>Mac wire</th>
-        <th>Mac wireless</th>
-        <th>Date buy</th>
-        <th>Date produce</th>
-        <th>Amt buy</th>
-        <th>Remarks</th>
-        <th colspan="3"></th>
+        <td><%= assetlist.mgmtno %></td>
+        <td><%= @store[assetlist.store_id].storename %> </td>
+        <td><%= assetlist.username %></td>
+        <td><%= assetlist.devicetype %></td>
+        <td><%= assetlist.purpose %></td>
+        <td><%= assetlist.manufacture %></td>
+        <td><%= assetlist.modelno %></td>
+        <td><%= assetlist.serialno %></td>
+        <td><%= assetlist.description %></td>
+        <td><%= assetlist.ram %></td>
+        <td><%= assetlist.disk %></td>
+        <td><%= assetlist.os %></td>
+        <td><%= assetlist.hostname %></td>
+        <td><%= assetlist.ipaddr %></td>
+        <td><%= assetlist.gateway %></td>
+        <td><%= assetlist.mac_wire %></td>
+        <td><%= assetlist.mac_wireless %></td>
+        <td><%= assetlist.date_buy %></td>
+        <td><%= assetlist.date_produce %></td>
+        <td><%= assetlist.amt_buy %></td>
+        <td><%= assetlist.remarks %></td>
+        <td><%= link_to 'Show', assetlist %></td>
+        <td><%= link_to 'Edit', edit_assetlist_path(assetlist) %></td>
+        <td><%= link_to 'Destroy', assetlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    </thead>
+    <% end %>
+  </tbody>
+</table>
 
-    <tbody>
-      <% @assetlists.each do |assetlist| %>
-        <tr>
-          <td><%= assetlist.mgmtno %></td>
-          <td><%= assetlist.dept %></td>
-          <td><%= assetlist.username %></td>
-          <td><%= assetlist.devicetype %></td>
-          <td><%= assetlist.purpose %></td>
-          <td><%= assetlist.manufacture %></td>
-          <td><%= assetlist.modelno %></td>
-          <td><%= assetlist.serialno %></td>
-          <td><%= assetlist.description %></td>
-          <td><%= assetlist.ram %></td>
-          <td><%= assetlist.disk %></td>
-          <td><%= assetlist.os %></td>
-          <td><%= assetlist.hostname %></td>
-          <td><%= assetlist.ipaddr %></td>
-          <td><%= assetlist.gateway %></td>
-          <td><%= assetlist.mac_wire %></td>
-          <td><%= assetlist.mac_wireless %></td>
-          <td><%= assetlist.date_buy %></td>
-          <td><%= assetlist.date_produce %></td>
-          <td><%= assetlist.amt_buy %></td>
-          <td><%= assetlist.remarks %></td>
-          <td><%= link_to 'Show', assetlist %></td>
-          <td><%= link_to 'Edit', edit_assetlist_path(assetlist) %></td>
-          <td><%= link_to 'Destroy', assetlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <%= will_paginate @assetlists, renderer: BootstrapPagination::Rails,  previous_label: "Previous", next_label: "Newer", inner_window: 1, outer_windows: 0 %>
+<br>
 
-  <br>
-
-  <%= link_to 'New Assetlist', new_assetlist_path %>
-  <%#= link_to '목록보기', assetlists_path%>
-
+<%= link_to 'New Assetlist', new_assetlist_path %>

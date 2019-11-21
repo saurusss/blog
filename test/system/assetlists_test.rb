@@ -17,7 +17,6 @@ class AssetlistsTest < ApplicationSystemTestCase
     fill_in "Amt buy", with: @assetlist.amt_buy
     fill_in "Date buy", with: @assetlist.date_buy
     fill_in "Date produce", with: @assetlist.date_produce
-    fill_in "Dept", with: @assetlist.dept
     fill_in "Description", with: @assetlist.description
     fill_in "Devicetype", with: @assetlist.devicetype
     fill_in "Disk", with: @assetlist.disk
@@ -34,6 +33,7 @@ class AssetlistsTest < ApplicationSystemTestCase
     fill_in "Ram", with: @assetlist.ram
     fill_in "Remarks", with: @assetlist.remarks
     fill_in "Serialno", with: @assetlist.serialno
+    fill_in "Store", with: @assetlist.store_id
     fill_in "Username", with: @assetlist.username
     click_on "Create Assetlist"
 
@@ -48,7 +48,6 @@ class AssetlistsTest < ApplicationSystemTestCase
     fill_in "Amt buy", with: @assetlist.amt_buy
     fill_in "Date buy", with: @assetlist.date_buy
     fill_in "Date produce", with: @assetlist.date_produce
-    fill_in "Dept", with: @assetlist.dept
     fill_in "Description", with: @assetlist.description
     fill_in "Devicetype", with: @assetlist.devicetype
     fill_in "Disk", with: @assetlist.disk
@@ -65,6 +64,7 @@ class AssetlistsTest < ApplicationSystemTestCase
     fill_in "Ram", with: @assetlist.ram
     fill_in "Remarks", with: @assetlist.remarks
     fill_in "Serialno", with: @assetlist.serialno
+    fill_in "Store", with: @assetlist.store_id
     fill_in "Username", with: @assetlist.username
     click_on "Update Assetlist"
 

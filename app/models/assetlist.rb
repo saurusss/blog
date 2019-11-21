@@ -1,3 +1,3 @@
 class Assetlist < ApplicationRecord
-    validates :mgmtno, :presence => true
+  belongs_to :store
 end
