@@ -2,9 +2,9 @@
 
 <h1>Assetlists</h1>
 
-<table>
-  <thead>
-    <tr>
+<table class="table">
+  <thead calss="well">
+    <tr >
       <th>Mgmtno</th>
       <th>Storename</th>
       <th>Username</th>
@@ -34,7 +34,7 @@
     <% @assetlists.each do |assetlist| %>
       <tr>
         <td><%= assetlist.mgmtno %></td>
-        <td><%= @store[assetlist.store_id].storename %> </td>
+        <td><%= link_to @store[assetlist.store_id].storename, stores_path %> </td>
         <td><%= assetlist.username %></td>
         <td><%= assetlist.devicetype %></td>
         <td><%= assetlist.purpose %></td>

@@ -12,33 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_11_21_061754) do
 
-  create_table "aaa", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "id"
-    t.text "mgmtno"
-    t.text "storename"
-    t.text "username"
-    t.text "devicetype"
-    t.text "purpose"
-    t.text "manufacture"
-    t.text "modelno"
-    t.text "serialno"
-    t.text "description"
-    t.text "ram"
-    t.text "disk"
-    t.text "os"
-    t.text "hostname"
-    t.text "ipaddr"
-    t.text "gateway"
-    t.text "mac_wire"
-    t.text "mac_wireless"
-    t.datetime "date_buy"
-    t.datetime "date_produce"
-    t.text "amt_buy"
-    t.text "remarks"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "assetlists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "mgmtno"
     t.bigint "store_id"
@@ -109,17 +82,6 @@ ActiveRecord::Schema.define(version: 2019_11_21_061754) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
-  end
-
-  create_table "storelist_191121", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "id"
-    t.text "group"
-    t.text "storecode"
-    t.text "store_ab"
-    t.text "storename"
-    t.text "extension"
-    t.text "address"
-    t.text "telno"
   end
 
   create_table "stores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
