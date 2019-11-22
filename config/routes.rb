@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :assetlists
+ 
   resources :stores
   get 'searches/result'
   devise_for :users
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
   post '/posts/:post_id' =>"comments#create"
   delete '/posts/:post_id/comments/:id' =>"comments#destroy"
   post '/posts/:post_id/comments/:id' => 'comments#update'
+  #get '/stores/search '=> 'stores#search'
+  post '/stores/search'=> 'stores#search'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

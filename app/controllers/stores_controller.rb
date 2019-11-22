@@ -7,6 +7,16 @@ class StoresController < ApplicationController
     @stores = Store.all
   end
 
+  def search
+    # @selectstore = "%#{params[:storename]}%"
+    # @stores = Store.where("storename like ?", @selectstore)
+    @selectstore = params[:storename]
+    @stores = Store.where("storename like ?", "%#{params[:storename]}%")
+    #redirect_to stores_path
+  end
+
+
+
   # GET /stores/1
   # GET /stores/1.json
   def show

@@ -2,6 +2,21 @@
 
 <h1>Assetlists</h1>
 
+
+
+
+<%#= form_with model: store, scope: "post"   do |form|  %>
+  <%#= form.label         :storename %>
+  <%# form.text_field    :storename,  storenm %>
+  <%#= form.hidden_field  :store_id,   assetls.store_id %>
+  <%#= form.label         :storename %>
+  <%#= form.text_field    :storeName  %>
+  <%#= form.hidden_field  :store_id    %>
+  <%#= form.submit "매장검색"%>
+<%# end %>
+      
+
+
 <table class="table">
   <thead calss="well">
     <tr >
@@ -34,7 +49,7 @@
     <% @assetlists.each do |assetlist| %>
       <tr>
         <td><%= assetlist.mgmtno %></td>
-        <td><%= link_to @store[assetlist.store_id].storename, stores_path %> </td>
+        <td><%= link_to @stores[assetlist.store_id].storename, stores_path %> </td>
         <td><%= assetlist.username %></td>
         <td><%= assetlist.devicetype %></td>
         <td><%= assetlist.purpose %></td>

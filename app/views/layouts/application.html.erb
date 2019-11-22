@@ -38,9 +38,10 @@
       <a href="/">Home</a> |
       <%= link_to "About", about_path %> 
       <% if user_signed_in? %>
-        - login :  
-        <%=current_user.email%>
+        | login user : <%=current_user.email%> | 
+        <%= link_to " 로그아웃", "/users/sign_out" %>
       <% end %>
+
 
       <%= yield %>
     </div>

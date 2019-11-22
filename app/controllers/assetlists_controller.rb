@@ -1,16 +1,24 @@
 class AssetlistsController < ApplicationController
   before_action :set_assetlist, only: [:show, :edit, :update, :destroy]
-
+    #def search
+    #  store= Store.where("storename = ?", :storename)
+    #end
+    # def search
+    #   selstnm = params[:storenm]
+    #   selstid = "2"
+    #   @stores = Store.where(store_id: selstid)
+    # end
   # GET /assetlists
   # GET /assetlists.json
   def index
-    s_store="2"
+    s_store="all"
     if s_store == "all"
         @assetlists = Assetlist.all
     else
-        @assetlists = Assetlist.where("store_id = ?", s_store)
+        #@assetlists = Assetlist.where("store_id = ?", s_store) # 아래 행과 동일
+        @assetlists = Assetlist.where(store_id: s_store)
     end
-    @store = Store.all
+    @stores = Store.all
   end
 
   # GET /assetlists/1

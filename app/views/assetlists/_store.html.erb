@@ -1,0 +1,6 @@
+<%= form_tag(assetlist_path, method: "get") do %>
+    <%= label_field_tag, "Store : " %>
+    <%= text_field_tag "storename", nil, placeholder: "Storename" %>
+    <%= hidden_field_tag "store_id" %>
+    <input type="submit" value="매장검색">
+<% end %>
