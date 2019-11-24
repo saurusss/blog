@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post '/posts/:post_id/comments/:id' => 'comments#update'
   #get '/stores/search '=> 'stores#search'
   post '/stores/search'=> 'stores#search'
-  get  '/assetlists/search/:store_id/:storename' => 'assetlists#search'
+  get  '/assetlists/search/:store_id' => 'assetlists#search'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

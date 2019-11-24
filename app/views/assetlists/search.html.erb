@@ -3,8 +3,12 @@
 <h1>Asset-list</h1> 
 
 <div class="well">
+  <% if @assetlists == nil %>
+     <h1 > 입력된 자산이 없습니다. - <%= @stores.storename %> <h1>
+  <% end %>
   <p> 
-  <%= @selected_store_id %> <%= @selected_storename%>
+  <%= @sel_stroename  %>
+  <%= @sel_asset_count %>
   <%#= @stores[assetlist.first.store_id].storename %>
     |  
   Registered Asset count : <%= @assetlists.count %>  
@@ -51,7 +55,7 @@
       <tr>
         <td><%= assetlist.mgmtno %></td>
         <td><%= assetlist.store_id %> </td>
-        <td><%= link_to @stores.where(id: assetlist.store_id)[0].storename, "/assetlists/search/#{assetlist.store_id}/#{@stores.where(id: assetlist.store_id)[0].storename}" %> </td>
+        <td><%= assetlist.store.storename %></td>
         <td><%= assetlist.username %></td>
         <td><%= assetlist.devicetype %></td>
         <td><%= assetlist.purpose %></td>

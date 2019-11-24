@@ -25,13 +25,11 @@ class AssetlistsController < ApplicationController
   end
   
   def search
-    # @selectstore = "%#{params[:storename]}%"
-    # @stores = Store.where("storename like ?", @selectstore)
-    @selected_store_id = params[:store_id]
-    @selected_storename = params[:storename]
-    @stores = Store.all
+    #@selected_store_id = params[:store_id]
     #@assetlists = Assetlist.all.paginate(page: params[:page], per_page: 10)
     @assetlists = Assetlist.where(store_id: params[:store_id] ).paginate(page: params[:page], per_page: 10)
+    @sel_asset_count = @assetlists.count
+    @sel_store = Store.where(id: params[:store_id]
     #redirect_to stores_path
   end
 

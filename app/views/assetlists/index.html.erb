@@ -45,7 +45,8 @@
       <tr>
         <td><%= assetlist.mgmtno %></td>
         <td><%= assetlist.store_id %> </td>
-        <td> <%= link_to @stores.where(id: assetlist.store_id)[0].storename, "/assetlists/search/#{assetlist.store_id}/#{@stores.where(id: assetlist.store_id)[0].storename}" %> </td>
+        <td><%= link_to assetlist.store.storename, "/assetlists/search/#{assetlist.store_id}"%>
+        <!--td> <%= link_to @stores.where(id: assetlist.store_id)[0].storename, "/assetlists/search/#{assetlist.store_id}/#{@stores.where(id: assetlist.store_id)[0].storename}" %> </td-->
         <td><%= assetlist.username %></td>
         <td><%= assetlist.devicetype %></td>
         <td><%= assetlist.purpose %></td>

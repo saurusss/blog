@@ -40,7 +40,7 @@
         <td><%= store.storecode %></td>
         <td><%= store.store_ab %></td>
         <td><%= store.id %></td>
-        <td><%= store.storename %></td>
+        <td><%= link_to store.storename, "/assetlists/search/#{store.id}" %> </td>
         <td><%= store.extension %></td>
         <td><%= store.address %></td>
         <td><%= store.telno %></td>
