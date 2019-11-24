@@ -23,6 +23,17 @@ class AssetlistsController < ApplicationController
     @assetlists = Assetlist.all.paginate(page: params[:page], per_page: 10)
   
   end
+  
+  def search
+    # @selectstore = "%#{params[:storename]}%"
+    # @stores = Store.where("storename like ?", @selectstore)
+    @selected_store_id = params[:store_id]
+    @selected_storename = params[:storename]
+    @stores = Store.all
+    #@assetlists = Assetlist.all.paginate(page: params[:page], per_page: 10)
+    @assetlists = Assetlist.where(store_id: params[:store_id] ).paginate(page: params[:page], per_page: 10)
+    #redirect_to stores_path
+  end
 
   # GET /assetlists/1
   # GET /assetlists/1.json

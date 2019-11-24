@@ -2,16 +2,16 @@
 
 <h1>Stores</h1>  
 <div class="well">
-<%= form_tag "/stores/search", method: "post" do %>
-    Store name :  
-    <input type="text"   name="storename" >
-    <input type="submit" value="Store search"> 
-<% end  %>
-</br>
-<p>Registered Store count : <%= @stores.count %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- <%= link_to 'New Store', new_store_path %> |
- <%= link_to "Stores", assetlists_path %> </p> 
+    <%= form_tag "/stores/search", method: "post" do %>
+        Store name :  
+        <input type="text"   name="storename" >
+        <input type="submit" value="Store search"> 
+    <% end  %>
+    </br>
+    <p>Registered Store count : <%= @stores.count %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= link_to 'New Store', new_store_path %> |
+    <%= link_to "Asset list - ALL", assetlists_path %> </p> 
 </div>
 
 
@@ -21,6 +21,7 @@
       <th>Group</th>
       <th>Storecode</th>
       <th>Store ab</th>
+      <th>Store_code</th>
       <th>Storename</th>
       <th>Extension</th>
       <th>Address</th>
@@ -35,7 +36,8 @@
         <td><%= store.group %></td>
         <td><%= store.storecode %></td>
         <td><%= store.store_ab %></td>
-        <td><%= store.storename %></td>
+        <td><%= store.id %></td>
+        <td><%= link_to store.storename, "/assetlists/search/#{store.id}/#{store.storename}" %> </td>
         <td><%= store.extension %></td>
         <td><%= store.address %></td>
         <td><%= store.telno %></td>

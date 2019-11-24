@@ -1,12 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Assetlist - ALL</h1> 
+<h1>Asset-list</h1> 
 
 <div class="well">
-  <p>Registered Asset count : <%= @assetlists.count %>  
+  <p> 
+  <%= @selected_store_id %> <%= @selected_storename%>
+  <%#= @stores[assetlist.first.store_id].storename %>
+    |  
+  Registered Asset count : <%= @assetlists.count %>  
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <%= link_to 'New Assetlist', new_assetlist_path %> |
+  <%= link_to "Asset list ALL", assetlists_path%> |
   <%= link_to "Stores", stores_path%></p>
 </div>
 
@@ -14,6 +19,7 @@
   <thead calss="well">
     <tr >
       <th>Mgmtno</th>
+      <th>Store_id </th>
       <th>Storename</th>
       <th>Username</th>
       <th>Devicetype</th>
@@ -45,7 +51,7 @@
       <tr>
         <td><%= assetlist.mgmtno %></td>
         <td><%= assetlist.store_id %> </td>
-        <td> <%= link_to @stores.where(id: assetlist.store_id)[0].storename, "/assetlists/search/#{assetlist.store_id}/#{@stores.where(id: assetlist.store_id)[0].storename}" %> </td>
+        <td><%= link_to @stores.where(id: assetlist.store_id)[0].storename, "/assetlists/search/#{assetlist.store_id}/#{@stores.where(id: assetlist.store_id)[0].storename}" %> </td>
         <td><%= assetlist.username %></td>
         <td><%= assetlist.devicetype %></td>
         <td><%= assetlist.purpose %></td>
