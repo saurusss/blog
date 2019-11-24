@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Assetlists</h1>
+<h1>Assetlists</h1>  <%= lint_to "Stores", stores_pathv%>
 
+<p>Registered Asset count : <%= @assetlists.count %> </p>
 
 
 
@@ -76,6 +77,8 @@
     <% end %>
   </tbody>
 </table>
+
+<%= will_paginate @assetlists, renderer: BootstrapPagination::Rails,  previous_label: "Previous", next_label: "Newer", inner_window: 1, outer_windows: 0 %>
 
 <br>
 

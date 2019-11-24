@@ -11,14 +11,17 @@ class AssetlistsController < ApplicationController
   # GET /assetlists
   # GET /assetlists.json
   def index
-    s_store="all"
-    if s_store == "all"
-        @assetlists = Assetlist.all
-    else
-        #@assetlists = Assetlist.where("store_id = ?", s_store) # 아래 행과 동일
-        @assetlists = Assetlist.where(store_id: s_store)
-    end
+    # s_store="all"
+    # if s_store == "all"
+    #     @assetlists = Assetlist.all
+    # else
+    #     #@assetlists = Assetlist.where("store_id = ?", s_store) # 아래 행과 동일
+    #     @assetlists = Assetlist.where(store_id: s_store)
+    # end
+
     @stores = Store.all
+    @assetlists = Assetlist.all.paginate(page: params[:page], per_page: 10)
+  
   end
 
   # GET /assetlists/1
