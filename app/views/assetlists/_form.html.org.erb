@@ -1,0 +1,123 @@
+<%= form_with(model: assetlist, local: true) do |form| %>
+  <% if assetlist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(assetlist.errors.count, "error") %> prohibited this assetlist from being saved:</h2>
+
+      <ul>
+      <% assetlist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :mgmtno %>  
+    <%= form.text_field :mgmtno %>
+  </div-->
+
+  <div class="field">
+    <%= form.label :store_id %>
+    <%= form.text_field :store_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :devicetype %>
+    <%= form.text_field :devicetype %>
+  </div>
+
+  <div class="field">
+    <%= form.label :purpose %>
+    <%= form.text_field :purpose %>
+  </div>
+
+  <div class="field">
+    <%= form.label :manufacture %>
+    <%= form.text_field :manufacture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modelno %>
+    <%= form.text_field :modelno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :serialno %>
+    <%= form.text_field :serialno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ram %>
+    <%= form.text_field :ram %>
+  </div>
+
+  <div class="field">
+    <%= form.label :disk %>
+    <%= form.text_field :disk %>
+  </div>
+
+  <div class="field">
+    <%= form.label :os %>
+    <%= form.text_field :os %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hostname %>
+    <%= form.text_field :hostname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ipaddr %>
+    <%= form.text_field :ipaddr %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gateway %>
+    <%= form.text_field :gateway %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mac_wire %>
+    <%= form.text_field :mac_wire %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mac_wireless %>
+    <%= form.text_field :mac_wireless %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_buy %>
+    <%= form.date_select :date_buy %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_produce %>
+    <%= form.date_select :date_produce %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amt_buy %>
+    <%= form.number_field :amt_buy %>
+  </div>
+
+  <div class="field">
+    <%= form.label :remarks %>
+    <%= form.text_area :remarks %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

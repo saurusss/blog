@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   #get '/stores/search '=> 'stores#search'
   post '/stores/search'=> 'stores#search'
   get  '/assetlists/search/:store_id' => 'assetlists#search'
+  get  '/assetlists/new_selstore/:store_id => assetlists#new_selstore'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

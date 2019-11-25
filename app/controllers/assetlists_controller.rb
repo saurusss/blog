@@ -42,8 +42,17 @@ class AssetlistsController < ApplicationController
 
   # GET /assetlists/new
   def new
+    @stores = Store.all
     @assetlist = Assetlist.new
   end
+
+  def new_selstore
+    #@storename = Store.find(params[:store_id]])
+    @assetlist = Assetlist.new
+    @asslistst.store_id = params[]:store_id]
+  end
+
+
 
   # GET /assetlists/1/edit
   def edit

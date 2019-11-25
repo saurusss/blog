@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Asset - list</h1> 
+<h1>Asset - Store selected </h1> 
 
 
   <% if @assetlists.count == 0 %>
@@ -88,6 +88,6 @@
 
     <br>
 
-    <%= link_to 'New Assetlist', new_assetlist_path %>
+    <%= link_to 'New Assetlist', "/assetlists/new_selstore/#{@assetlists.last.store_id}" %>
 
   <% end %>
