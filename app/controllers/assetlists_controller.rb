@@ -1,13 +1,11 @@
 class AssetlistsController < ApplicationController
   before_action :set_assetlist, only: [:show, :edit, :update, :destroy]
-    #def search
-    #  store= Store.where("storename = ?", :storename)
-    #end
-    # def search
-    #   selstnm = params[:storenm]
-    #   selstid = "2"
-    #   @stores = Store.where(store_id: selstid)
-    # end
+
+  # rescue_from ActiveRecord::RecordNotFound, :with => :render_missing 
+  # def render_missing
+  #   render 'This is a 404', :status => 404
+  # end
+
   # GET /assetlists
   # GET /assetlists.json
   def index
@@ -19,17 +17,21 @@ class AssetlistsController < ApplicationController
     #     @assetlists = Assetlist.where(store_id: s_store)
     # end
 
-    @stores = Store.all
+    #@stores = Store.all
     @assetlists = Assetlist.all.paginate(page: params[:page], per_page: 10)
   
   end
   
   def search
-    #@selected_store_id = params[:store_id]
+    #@assetlists = Assetlist.all
     #@assetlists = Assetlist.all.paginate(page: params[:page], per_page: 10)
+    @sel_storename = Store.where(id: params[:store_id]).first.storename
     @assetlists = Assetlist.where(store_id: params[:store_id] ).paginate(page: params[:page], per_page: 10)
-    @sel_asset_count = @assetlists.count
-    @sel_store = Store.where(id: params[:store_id]
+    # if @assetlists.count == 0 
+    #     redirect_to stores_path
+    # end
+ 
+    
     #redirect_to stores_path
   end
 

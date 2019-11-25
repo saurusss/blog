@@ -1,90 +1,93 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Asset-list</h1> 
+<h1>Asset - list</h1> 
 
-<div class="well">
-  <% if @assetlists == nil %>
-     <h1 > 입력된 자산이 없습니다. - <%= @stores.storename %> <h1>
+
+  <% if @assetlists.count == 0 %>
+      <% message = "There is no asset registered in the selected store : #{@sel_storename} (click here to return)" %>
+      <%= link_to message, stores_path %>
+  <% else %>
+    <div class="well">
+
+      <p> 
+
+      <%= @assetlists.first.store.storename %> &nbsp;&nbsp; | &nbsp;&nbsp; 
+      Registered Asset count : <%= @assetlists.count %>  
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <%= link_to 'New Assetlist', new_assetlist_path %> |
+      <%= link_to "Asset list ALL", assetlists_path%> |
+      <%= link_to "Stores", stores_path%></p>
+    </div>
+
+    <table class="table">
+      <thead calss="well">
+        <tr >
+          <th>Mgmtno</th>
+          <th>Store_id </th>
+          <th>Storename</th>
+          <th>Username</th>
+          <th>Devicetype</th>
+          <th>Purpose</th>
+          <th>Manufacture</th>
+          <th>Modelno</th>
+          <th>Serialno</th>
+          <th>Description</th>
+          <th>Ram</th>
+          <th>Disk</th>
+          <th>Os</th>
+          <th>Hostname</th>
+          <th>Ipaddr</th>
+          <th>Gateway</th>
+          <th>Mac wire</th>
+          <th>Mac wireless</th>
+          <th>Date buy</th>
+          <th>Date produce</th>
+          <th>Amt buy</th>
+          <th>Remarks</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @assetlists.each do |assetlist| %>
+
+          <% @selected_asset = assetlist %>
+          <tr>
+            <td><%= assetlist.mgmtno %></td>
+            <td><%= assetlist.store_id %> </td>
+            <td><%= assetlist.store.storename %></td>
+            <td><%= assetlist.username %></td>
+            <td><%= assetlist.devicetype %></td>
+            <td><%= assetlist.purpose %></td>
+            <td><%= assetlist.manufacture %></td>
+            <td><%= assetlist.modelno %></td>
+            <td><%= assetlist.serialno %></td>
+            <td><%= assetlist.description %></td>
+            <td><%= assetlist.ram %></td>
+            <td><%= assetlist.disk %></td>
+            <td><%= assetlist.os %></td>
+            <td><%= assetlist.hostname %></td>
+            <td><%= assetlist.ipaddr %></td>
+            <td><%= assetlist.gateway %></td>
+            <td><%= assetlist.mac_wire %></td>
+            <td><%= assetlist.mac_wireless %></td>
+            <td><%= assetlist.date_buy %></td>
+            <td><%= assetlist.date_produce %></td>
+            <td><%= assetlist.amt_buy %></td>
+            <td><%= assetlist.remarks %></td>
+            <td><%= link_to 'Show', assetlist %></td>
+            <td><%= link_to 'Edit', edit_assetlist_path(assetlist) %></td>
+            <td><%= link_to 'Destroy', assetlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= will_paginate @assetlists, renderer: BootstrapPagination::Rails,  previous_label: "Previous", next_label: "Newer", inner_window: 1, outer_windows: 0 %>
+
+    <br>
+
+    <%= link_to 'New Assetlist', new_assetlist_path %>
+
   <% end %>
-  <p> 
-  <%= @sel_stroename  %>
-  <%= @sel_asset_count %>
-  <%#= @stores[assetlist.first.store_id].storename %>
-    |  
-  Registered Asset count : <%= @assetlists.count %>  
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <%= link_to 'New Assetlist', new_assetlist_path %> |
-  <%= link_to "Asset list ALL", assetlists_path%> |
-  <%= link_to "Stores", stores_path%></p>
-</div>
-
-<table class="table">
-  <thead calss="well">
-    <tr >
-      <th>Mgmtno</th>
-      <th>Store_id </th>
-      <th>Storename</th>
-      <th>Username</th>
-      <th>Devicetype</th>
-      <th>Purpose</th>
-      <th>Manufacture</th>
-      <th>Modelno</th>
-      <th>Serialno</th>
-      <th>Description</th>
-      <th>Ram</th>
-      <th>Disk</th>
-      <th>Os</th>
-      <th>Hostname</th>
-      <th>Ipaddr</th>
-      <th>Gateway</th>
-      <th>Mac wire</th>
-      <th>Mac wireless</th>
-      <th>Date buy</th>
-      <th>Date produce</th>
-      <th>Amt buy</th>
-      <th>Remarks</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @assetlists.each do |assetlist| %>
-
-      <% @selected_asset = assetlist %>
-      <tr>
-        <td><%= assetlist.mgmtno %></td>
-        <td><%= assetlist.store_id %> </td>
-        <td><%= assetlist.store.storename %></td>
-        <td><%= assetlist.username %></td>
-        <td><%= assetlist.devicetype %></td>
-        <td><%= assetlist.purpose %></td>
-        <td><%= assetlist.manufacture %></td>
-        <td><%= assetlist.modelno %></td>
-        <td><%= assetlist.serialno %></td>
-        <td><%= assetlist.description %></td>
-        <td><%= assetlist.ram %></td>
-        <td><%= assetlist.disk %></td>
-        <td><%= assetlist.os %></td>
-        <td><%= assetlist.hostname %></td>
-        <td><%= assetlist.ipaddr %></td>
-        <td><%= assetlist.gateway %></td>
-        <td><%= assetlist.mac_wire %></td>
-        <td><%= assetlist.mac_wireless %></td>
-        <td><%= assetlist.date_buy %></td>
-        <td><%= assetlist.date_produce %></td>
-        <td><%= assetlist.amt_buy %></td>
-        <td><%= assetlist.remarks %></td>
-        <td><%= link_to 'Show', assetlist %></td>
-        <td><%= link_to 'Edit', edit_assetlist_path(assetlist) %></td>
-        <td><%= link_to 'Destroy', assetlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= will_paginate @assetlists, renderer: BootstrapPagination::Rails,  previous_label: "Previous", next_label: "Newer", inner_window: 1, outer_windows: 0 %>
-
-<br>
-
-<%= link_to 'New Assetlist', new_assetlist_path %>
