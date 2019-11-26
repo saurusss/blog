@@ -49,7 +49,7 @@ class AssetlistsController < ApplicationController
   def new_selstore
     #@storename = Store.find(params[:store_id]])
     @assetlist = Assetlist.new
-    @asslistst.store_id = params[]:store_id]
+    @asslistst.store_id = params[:store_id]
   end
 
 
