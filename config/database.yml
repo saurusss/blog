@@ -15,8 +15,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: rails
   password: sockocsockoc@1
-  host: pcredmine
-  # UPDATE TST office
+  host: localhost
+  # UPDATE TST home
 
 development:
   <<: *default
